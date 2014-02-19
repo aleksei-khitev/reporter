@@ -3,22 +3,57 @@ package ru.akhitev.reporter.email.report;
 import org.antlr.stringtemplate.StringTemplate
 import org.antlr.stringtemplate.StringTemplateGroup
 import org.apache.log4j.Logger
-
+/**
+ * Реализация интерфейса ReportManager
+ *
+ * @author Хитёв Алексей Юрьевич (alexkhitev@gmail.com)
+ */
 class ReportManagerImplOne implements ReportManager {
+    /**
+     * Список системных сообщений
+     */
     def systemErrorList = []
+    /**
+     * Список сообщений обработки
+     */
     def stringErrorsList = []
+    /**
+     * Есть ли записи в списках
+     */
     boolean hasError = false
+    /**
+     * Журнал
+     */
     Logger logger
+    /**
+     * Группа шаблонов тла письма
+     */
     StringTemplateGroup group = new StringTemplateGroup("group", "templates");
-
-    void setLogger(Logger logger){
-        this.logger=logger
+    /**
+     * Добавление строки в список системных сообщений
+     * @param firstCol Наполнение первой ячейки таблицы
+     * @param secondCol Наполнение второй ячейки таблицы
+     */
+    void addToSystemErrorList(String firstCol, String secondCol) {
+        systemErrorList.add("<td><b>${firstCol}</b></td><td>${secondCol}</td>")
+        hasError=true
     }
-
-    boolean havingErrors() {
-        hasError
+    /**
+     * Добавление в список сообщений обработки
+     * @param firstCol Наполнение первой ячейки таблицы
+     * @param secondCol Наполнение второй ячейки таблицы
+     */
+    void addToStringErrorList(String firstCol, String secondCol) {
+        stringErrorsList.add("<td><b>${firstCol}</b></td><td>${secondCol}</td>")
+        hasError=true
     }
-
+    /**
+     * Создание тела письма
+     * @param title Основной заголовок в шаблоне
+     * @param firstHeader Заголовок секции системных сообщений
+     * @param secondHeader Заголовок секции сообщений обработки
+     * @return Получившееся тело письма
+     */
     String createReport(String title, String firstHeader, String secondHeader) {
         StringTemplate mainTemplate
         try{
@@ -33,17 +68,12 @@ class ReportManagerImplOne implements ReportManager {
         mainTemplate.setAttribute("date", calendar.format("дата: dd.MM.yyyy; время: HH.mm; день: EEE"))
         mainTemplate.toString()
     }
-
-    void addToSystemErrorList(String firstCol, String secondCol) {
-        systemErrorList.add("<td><b>${firstCol}</b></td><td>${secondCol}</td>")
-        hasError=true
-    }
-
-    void addToStringErrorList(String firstCol, String secondCol) {
-        stringErrorsList.add("<td><b>${firstCol}</b></td><td>${secondCol}</td>")
-        hasError=true
-    }
-
+    /**
+     * Создание наполнения таблицы сообщений из списков
+     * @param firstHeader Заголовок секции системных сообщений
+     * @param secondHeader Заголовок секции сообщений обработки
+     * @return Наполнение таблицы
+     */
     String generateTable(String firstHeader, String secondHeader) {
         String result = ""
         String temp = ""
@@ -79,5 +109,19 @@ class ReportManagerImplOne implements ReportManager {
             result += strErrorListTemplate.toString()
         }
         return result
+    }
+    /**
+     * Были ли занесены какие либо сообщения об ошибках
+     * @return
+     */
+    boolean havingErrors() {
+        hasError
+    }
+    /**
+     * Задача журнала log4j для сообщений об ошибках работы
+     * @param logger Журнал log4j
+     */
+    void setLogger(Logger logger){
+        this.logger=logger
     }
 }

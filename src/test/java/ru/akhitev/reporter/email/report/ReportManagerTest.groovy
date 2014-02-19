@@ -1,10 +1,23 @@
+package ru.akhitev.reporter.email.report
+
 import org.junit.Before
 import org.junit.Test
 import ru.akhitev.reporter.email.report.ReportManager
 import ru.akhitev.reporter.email.report.ReportManagerImplOne
 
+/**
+ * Тест создателя тела письма
+ *
+ * @author Хитёв Алексей Юрьевич (alexkhitev@gmail.com)
+ */
 class ReportManagerTest{
+    /**
+     * Создатель тела письма
+     */
     ReportManager reportManager
+    /**
+     * Инициализация
+     */
     @Before
     void init(){
         reportManager=new ReportManagerImplOne()
@@ -15,6 +28,9 @@ class ReportManagerTest{
         reportManager.addToStringErrorList("2.1 Тест","2.2 Тест")
         reportManager.addToStringErrorList("3.1 Тест","3.2 Тест")
     }
+    /**
+     * Тест
+     */
     @Test
     void addToErrorListsAndCreateReport(){
         String report = reportManager.createReport("Общий тест","Ошибки №1", "Ошибки №2")

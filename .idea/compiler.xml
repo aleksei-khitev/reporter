@@ -25,6 +25,9 @@
         <module name="reporter" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="reporter" target="1.7" />
+    </bytecodeTargetLevel>
   </component>
 </project>
 

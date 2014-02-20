@@ -33,6 +33,7 @@ class Reporter{
         reportManager = new ReportManagerImplOne()
         smtpManager.setLogger(logger)
         reportManager.setLogger(logger)
+        parseProprtiesFile("dat${File.separator}reporter.properties")
     }
     /**
      * Констурктор без журнала
@@ -40,9 +41,51 @@ class Reporter{
     Reporter(){
         smtpManager = new SmtpManagerImplOne()
         reportManager = new ReportManagerImplOne()
+        parseProprtiesFile("dat${File.separator}reporter.properties")
     }
     /**
-     * Заполнение карты свойств
+     * Конструктор с путем к файлу свойств
+     * @param propFilePath Файл с данными для карты свойств
+     */
+    Reporter(String propFilePath){
+        smtpManager = new SmtpManagerImplOne()
+        reportManager = new ReportManagerImplOne()
+        parseProprtiesFile(propFilePath)
+    }
+    /**
+     *  Конструктор с журналом и путем к файлу свойств
+     * @param propFilePath Файл с данными для карты свойств
+     * @param logger Журнал log4j
+     */
+    Reporter(String propFilePath, Logger logger){
+        smtpManager = new SmtpManagerImplOne()
+        reportManager = new ReportManagerImplOne()
+        smtpManager.setLogger(logger)
+        reportManager.setLogger(logger)
+        parseProprtiesFile(propFilePath)
+    }
+    /**
+     * Метод заполнения карты свойств из файла
+     * @param propFilePath Файл с данными для карты свойств
+     */
+    void parseProprtiesFile(String propFilePath){
+        Properties props = new Properties()
+        File propsFile = new File(propFilePath)
+        if(propsFile.exists()){
+            props.load(propsFile.newDataInputStream())
+            properties['title']=props.getProperty('title')
+            properties['firstHeader']=props.getProperty('firstHeader')
+            properties['secondHeader']=props.getProperty('secondHeader')
+            properties['host']=props.getProperty('host')
+            properties['port']=props.getProperty('port').toInteger()
+            properties['username']=props.getProperty('username')
+            properties['password']=props.getProperty('password')
+            properties['to']=props.getProperty('to')
+            properties['subject']=props.getProperty('subject')
+        }
+    }
+    /**
+     * Заполнение карты свойств в ручную
      * @param title Основной заголовок в шаблоне
      * @param firstHeader Заголовок секции системных сообщений
      * @param secondHeader Заголовок секции сообщений обработки

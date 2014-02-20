@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e2b2956d-e1fd-4122-9cc3-3da28ec5806a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reporter.iml" afterPath="$PROJECT_DIR$/reporter.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dat/reporter.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/akhitev/reporter/Reporter.groovy" afterPath="$PROJECT_DIR$/src/main/java/ru/akhitev/reporter/Reporter.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/ru/akhitev/reporter/ReporterTest.groovy" afterPath="$PROJECT_DIR$/src/test/java/ru/akhitev/reporter/ReporterTest.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="reporter.iws" />
@@ -77,11 +76,42 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="pom.xml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="21" selection-start="994" selection-end="994" vertical-scroll-proportion="0.5573506" vertical-offset="0" max-vertical-offset="1665">
+            <state line="43" column="21" selection-start="1653" selection-end="1653" vertical-scroll-proportion="0.0" vertical-offset="645" max-vertical-offset="1665">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Reporter.groovy" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ru/akhitev/reporter/Reporter.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="84" column="9" selection-start="2876" selection-end="2876" vertical-scroll-proportion="0.36619717" vertical-offset="922" max-vertical-offset="2025">
+              <folding>
+                <element signature="e#29#82#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="reporter.properties" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dat/reporter.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="24" selection-start="193" selection-end="193" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="210">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ReporterTest.groovy" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/ru/akhitev/reporter/ReporterTest.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="28" column="32" selection-start="793" selection-end="793" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="660">
+              <folding>
+                <element signature="e#29#52#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -96,6 +126,7 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
+        <option value="alexkhitev" />
         <option value="Хитёв Алексей" />
       </list>
     </option>
@@ -126,13 +157,14 @@
         <option value="$PROJECT_DIR$/src/main/java/ru/akhitev/reporter/email/sender/SmtpManagerImplOne.groovy" />
         <option value="$PROJECT_DIR$/src/main/java/ru/akhitev/reporter/email/report/ReportManager.groovy" />
         <option value="$PROJECT_DIR$/src/main/java/ru/akhitev/reporter/email/report/ReportManagerImplOne.groovy" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/akhitev/reporter/Reporter.groovy" />
         <option value="$PROJECT_DIR$/src/test/java/ReporterTest.groovy" />
         <option value="$PROJECT_DIR$/src/test/java/ReportManagerTest.groovy" />
         <option value="$PROJECT_DIR$/src/test/java/SmtpManagerTest.groovy" />
-        <option value="$PROJECT_DIR$/src/test/java/ru/akhitev/reporter/ReporterTest.groovy" />
         <option value="$PROJECT_DIR$/src/test/java/ru/akhitev/reporter/email/sender/SmtpManagerTest.groovy" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/dat/reporter.properties" />
+        <option value="$PROJECT_DIR$/src/test/java/ru/akhitev/reporter/ReporterTest.groovy" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/akhitev/reporter/Reporter.groovy" />
       </list>
     </option>
   </component>
@@ -149,9 +181,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-2" />
-    <option name="width" value="1924" />
-    <option name="height" value="1061" />
+    <option name="width" value="1920" />
+    <option name="height" value="1054" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -166,7 +197,7 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectReloadState">
-    <option name="STATE" value="2" />
+    <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
@@ -181,6 +212,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -419,10 +452,36 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reporter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reporter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="doc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reporter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reporter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -458,7 +517,7 @@
       <recent name="$PROJECT_DIR$/templates" />
     </key>
   </component>
-  <component name="RunManager" selected="Maven.Maven">
+  <component name="RunManager" selected="JUnit.All in reporter">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin" singleton="true">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
@@ -801,17 +860,22 @@
       <updated>1392798219828</updated>
       <workItem from="1392798221305" duration="8270000" />
       <workItem from="1392806547636" duration="11962000" />
-      <workItem from="1392820484855" duration="1012000" />
+      <workItem from="1392820484855" duration="1920000" />
+      <workItem from="1392880288128" duration="3054000" />
     </task>
     <task id="LOCAL-00001" summary="GroovyDoc">
       <created>1392820267573</created>
       <updated>1392820267573</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="GroovyDoc&#10;">
+      <created>1392821509641</created>
+      <updated>1392821509641</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21244000" />
+    <option name="totallyTimeSpent" value="25206000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -834,7 +898,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-2" y="0" width="1924" height="1061" extended-state="6" />
+    <frame x="0" y="0" width="1920" height="1054" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -850,7 +914,7 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24973376" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19322917" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32917964" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32917964" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32978722" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -892,6 +956,22 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="21" selection-start="1653" selection-end="1653" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1665">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/akhitev/reporter/Reporter.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="0" selection-start="287" selection-end="287" vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="1380">
+          <folding>
+            <element signature="e#29#82#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="17" selection-start="556" selection-end="556" vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="1680">
           <folding />
         </state>
@@ -920,16 +1000,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/DBErrorList.st">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="112" selection-start="112" selection-end="112" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
-          <folding />
-        </state>
+        <state line="0" column="112" selection-start="112" selection-end="112" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/reportTemplate.st">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="17" selection-start="190" selection-end="190" vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="270">
-          <folding />
-        </state>
+        <state line="7" column="17" selection-start="190" selection-end="190" vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="270" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/ru/akhitev/reporter/email/report/ReportManagerTest.groovy">
@@ -969,7 +1045,9 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/akhitev/reporter/Reporter.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="1" selection-start="552" selection-end="552" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="360">
-          <folding />
+          <folding>
+            <element signature="e#29#82#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1001,22 +1079,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/akhitev/reporter/Reporter.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="80" column="22" selection-start="2625" selection-end="2625" vertical-scroll-proportion="1.2351029" vertical-offset="0" max-vertical-offset="1320">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ru/akhitev/reporter/ReporterTest.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="7" selection-start="666" selection-end="666" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="540">
-          <folding>
-            <element signature="e#29#52#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/ru/akhitev/reporter/email/report/ReportManagerTest.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state line="31" column="11" selection-start="935" selection-end="939" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="735">
@@ -1037,29 +1099,50 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/DBErrorList.st">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="12" selection-start="119" selection-end="119" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="165">
-          <folding />
-        </state>
+        <state line="5" column="12" selection-start="119" selection-end="119" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="165" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/reportTemplate.st">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="7" selection-start="309" selection-end="309" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
-          <folding />
-        </state>
+        <state line="14" column="7" selection-start="309" selection-end="309" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/akhitev/reporter/email/report/ReportManager.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="3" selection-start="132" selection-end="184" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="675">
+        <state line="8" column="10" selection-start="199" selection-end="199" vertical-scroll-proportion="0.12820514" vertical-offset="0" max-vertical-offset="936">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="21" selection-start="994" selection-end="994" vertical-scroll-proportion="0.5573506" vertical-offset="0" max-vertical-offset="1665">
+        <state line="43" column="21" selection-start="1653" selection-end="1653" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1665">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dat/reporter.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="24" selection-start="193" selection-end="193" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="210">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ru/akhitev/reporter/ReporterTest.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="32" selection-start="793" selection-end="793" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="660">
+          <folding>
+            <element signature="e#29#52#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/akhitev/reporter/Reporter.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="84" column="9" selection-start="2876" selection-end="2876" vertical-scroll-proportion="0.36619717" vertical-offset="922" max-vertical-offset="2025">
+          <folding>
+            <element signature="e#29#82#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

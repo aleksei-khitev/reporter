@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e2b2956d-e1fd-4122-9cc3-3da28ec5806a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dat/reporter.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/akhitev/reporter/Reporter.groovy" afterPath="$PROJECT_DIR$/src/main/java/ru/akhitev/reporter/Reporter.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/ru/akhitev/reporter/ReporterTest.groovy" afterPath="$PROJECT_DIR$/src/test/java/ru/akhitev/reporter/ReporterTest.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="reporter.iws" />
@@ -88,7 +86,7 @@
       <file leaf-file-name="Reporter.groovy" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/akhitev/reporter/Reporter.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="84" column="9" selection-start="2876" selection-end="2876" vertical-scroll-proportion="0.36619717" vertical-offset="922" max-vertical-offset="2025">
+            <state line="92" column="36" selection-start="3196" selection-end="3196" vertical-scroll-proportion="0.30119178" vertical-offset="1102" max-vertical-offset="2025">
               <folding>
                 <element signature="e#29#82#0" expanded="true" />
               </folding>
@@ -861,7 +859,7 @@
       <workItem from="1392798221305" duration="8270000" />
       <workItem from="1392806547636" duration="11962000" />
       <workItem from="1392820484855" duration="1920000" />
-      <workItem from="1392880288128" duration="3054000" />
+      <workItem from="1392880288128" duration="4851000" />
     </task>
     <task id="LOCAL-00001" summary="GroovyDoc">
       <created>1392820267573</created>
@@ -871,11 +869,15 @@
       <created>1392821509641</created>
       <updated>1392821509641</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="свойства из файла">
+      <created>1392883488863</created>
+      <updated>1392883488863</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25206000" />
+    <option name="totallyTimeSpent" value="27003000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -944,7 +946,8 @@
     </option>
     <MESSAGE value="GroovyDoc" />
     <MESSAGE value="GroovyDoc&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="GroovyDoc&#10;" />
+    <MESSAGE value="свойства из файла" />
+    <option name="LAST_COMMIT_MESSAGE" value="свойства из файла" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1012,7 +1015,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="37" selection-start="839" selection-end="839" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="420">
           <folding>
-            <element signature="e#42#65#0" expanded="true" />
+            <element signature="e#42#65#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1021,7 +1024,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="0" selection-start="102" selection-end="102" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="210">
           <folding>
-            <element signature="e#42#65#0" expanded="true" />
+            <element signature="e#42#65#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1037,7 +1040,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="0" selection-start="426" selection-end="426" vertical-scroll-proportion="0.0" vertical-offset="210" max-vertical-offset="825">
           <folding>
-            <element signature="e#42#72#0" expanded="true" />
+            <element signature="e#42#72#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1060,7 +1063,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="0" selection-start="374" selection-end="374" vertical-scroll-proportion="0.16025642" vertical-offset="0" max-vertical-offset="1215">
           <folding>
-            <element signature="e#42#72#0" expanded="true" />
+            <element signature="e#42#72#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1083,7 +1086,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="31" column="11" selection-start="935" selection-end="939" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="735">
           <folding>
-            <element signature="e#42#65#0" expanded="true" />
+            <element signature="e#42#65#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1092,7 +1095,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="21" column="7" selection-start="498" selection-end="498" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="750">
           <folding>
-            <element signature="e#42#65#0" expanded="true" />
+            <element signature="e#42#65#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1139,7 +1142,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/akhitev/reporter/Reporter.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="9" selection-start="2876" selection-end="2876" vertical-scroll-proportion="0.36619717" vertical-offset="922" max-vertical-offset="2025">
+        <state line="92" column="36" selection-start="3196" selection-end="3196" vertical-scroll-proportion="0.30119178" vertical-offset="1102" max-vertical-offset="2025">
           <folding>
             <element signature="e#29#82#0" expanded="true" />
           </folding>

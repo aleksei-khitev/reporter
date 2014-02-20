@@ -72,7 +72,7 @@ class Reporter{
         Properties props = new Properties()
         File propsFile = new File(propFilePath)
         if(propsFile.exists()){
-            props.load(propsFile.newDataInputStream())
+            props.load(new StringReader(propsFile.getText("UTF-8")))
             properties['title']=props.getProperty('title')
             properties['firstHeader']=props.getProperty('firstHeader')
             properties['secondHeader']=props.getProperty('secondHeader')

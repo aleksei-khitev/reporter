@@ -1,15 +1,21 @@
 /*
- * ru.akhitev.reporter. Программа для отправки по почте отчетов о работе в формате HTML
- * Copyright (c) 2014 Хитёв Алексей
+ * ru.akhitev.reporter is a library for encryption.
+ * Copyright (c) 2014 Aleksei Khitevi (Хитёв Алексей Юрьевич).
  *
- * Этот файл - часть ru.akhitev.reporter. Вы можете перераспространять ее и/или изменять ее на условиях
- * Стандартной общественной лицензии GNU в том виде, в каком она была опубликована Фондом свободного программного
- * обеспечения; либо версии 3 лицензии, либо (по вашему выбору) любой более поздней версии.
- * Эта программа распространяется в надежде, что она будет полезной, но БЕЗО ВСЯКИХ ГАРАНТИЙ; даже без неявной гарантии
- * ТОВАРНОГО ВИДА или ПРИГОДНОСТИ ДЛЯ ОПРЕДЕЛЕННЫХ ЦЕЛЕЙ. Подробнее см. в Стандартной общественной лицензии GNU.
- * Вы должны были получить копию Стандартной общественной лицензии GNU вместе с этой программой. Если это не так, см.
- * <http://www.gnug/licenses/>.
- */
+ * This file is part of ru.akhitev.encrypter
+ *
+ * ru.akhitev.reporter is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * ru.akhitev.encrypter is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+*/
 
 package ru.akhitev.reporter.email.report;
 
@@ -17,55 +23,51 @@ import org.antlr.stringtemplate.StringTemplate
 import org.antlr.stringtemplate.StringTemplateGroup
 import org.apache.log4j.Logger
 /**
- * Реализация интерфейса ReportManager
+ *IReportManager implementation
  *
- * @author Хитёв Алексей Юрьевич (alexkhitev@gmail.com)
+ * @author Aleksei Khitev (alexkhitev@gmail.com)
  */
-class ReportManagerImplOne implements ReportManager {
+class ReportManagerFirstImpl implements IReportManager {
     /**
-     * Список системных сообщений
+     * System messages list
      */
     def systemErrorList = []
     /**
-     * Список сообщений обработки
+     * Another messages list
      */
     def stringErrorsList = []
     /**
-     * Есть ли записи в списках
+     * Are there any messages in the lists
      */
     boolean hasError = false
     /**
-     * Журнал
-     */
-    Logger logger
-    /**
-     * Группа шаблонов тла письма
+     * Templates group
      */
     StringTemplateGroup group = new StringTemplateGroup("group", "templates");
     /**
-     * Добавление строки в список системных сообщений
-     * @param firstCol Наполнение первой ячейки таблицы
-     * @param secondCol Наполнение второй ячейки таблицы
+     * The method used for adding message to system section
+     * @param firstCol First column text
+     * @param secondCol Second column text
      */
     void addToSystemErrorList(String firstCol, String secondCol) {
         systemErrorList.add("<td><b>${firstCol}</b></td><td>${secondCol}</td>")
         hasError=true
     }
     /**
-     * Добавление в список сообщений обработки
-     * @param firstCol Наполнение первой ячейки таблицы
-     * @param secondCol Наполнение второй ячейки таблицы
+     * The method used for adding message to another section
+     * @param firstCol First column text
+     * @param secondCol Second column text
      */
     void addToStringErrorList(String firstCol, String secondCol) {
         stringErrorsList.add("<td><b>${firstCol}</b></td><td>${secondCol}</td>")
         hasError=true
     }
     /**
-     * Создание тела письма
-     * @param title Основной заголовок в шаблоне
-     * @param firstHeader Заголовок секции системных сообщений
-     * @param secondHeader Заголовок секции сообщений обработки
-     * @return Получившееся тело письма
+     * The method used for email's body forming
+     * @param title Main title at the template
+     * @param firstHeader System section title
+     * @param secondHeader Another section title
+     * @return Email's body
      */
     String createReport(String title, String firstHeader, String secondHeader) {
         StringTemplate mainTemplate
@@ -82,10 +84,10 @@ class ReportManagerImplOne implements ReportManager {
         mainTemplate.toString()
     }
     /**
-     * Создание наполнения таблицы сообщений из списков
-     * @param firstHeader Заголовок секции системных сообщений
-     * @param secondHeader Заголовок секции сообщений обработки
-     * @return Наполнение таблицы
+     * The method used for forming table from message's lists
+     * @param firstHeader System section title
+     * @param secondHeader Another section title
+     * @return tables'
      */
     String generateTable(String firstHeader, String secondHeader) {
         String result = ""
@@ -124,17 +126,10 @@ class ReportManagerImplOne implements ReportManager {
         return result
     }
     /**
-     * Были ли занесены какие либо сообщения об ошибках
+     * Did messages add to the report
      * @return
      */
     boolean havingErrors() {
         hasError
-    }
-    /**
-     * Задача журнала log4j для сообщений об ошибках работы
-     * @param logger Журнал log4j
-     */
-    void setLogger(Logger logger){
-        this.logger=logger
     }
 }

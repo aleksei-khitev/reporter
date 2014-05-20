@@ -1,85 +1,93 @@
 /*
- * ru.akhitev.reporter. Программа для отправки по почте отчетов о работе в формате HTML
- * Copyright (c) 2014 Хитёв Алексей
+ * ru.akhitev.reporter is a library for encryption.
+ * Copyright (c) 2014 Aleksei Khitevi (Хитёв Алексей Юрьевич).
  *
- * Этот файл - часть ru.akhitev.reporter. Вы можете перераспространять ее и/или изменять ее на условиях
- * Стандартной общественной лицензии GNU в том виде, в каком она была опубликована Фондом свободного программного
- * обеспечения; либо версии 3 лицензии, либо (по вашему выбору) любой более поздней версии.
- * Эта программа распространяется в надежде, что она будет полезной, но БЕЗО ВСЯКИХ ГАРАНТИЙ; даже без неявной гарантии
- * ТОВАРНОГО ВИДА или ПРИГОДНОСТИ ДЛЯ ОПРЕДЕЛЕННЫХ ЦЕЛЕЙ. Подробнее см. в Стандартной общественной лицензии GNU.
- * Вы должны были получить копию Стандартной общественной лицензии GNU вместе с этой программой. Если это не так, см.
- * <http://www.gnug/licenses/>.
- */
+ * This file is part of ru.akhitev.encrypter
+ *
+ * ru.akhitev.reporter is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * ru.akhitev.encrypter is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+*/
 
 package ru.akhitev.reporter
 
-import ru.akhitev.reporter.email.report.ReportManager
-import ru.akhitev.reporter.email.report.ReportManagerImplOne
-import ru.akhitev.reporter.email.sender.SmtpManager
-import ru.akhitev.reporter.email.sender.SmtpManagerImplOne;
+import ru.akhitev.reporter.email.report.IReportManager
+import ru.akhitev.reporter.email.report.ReportManagerFirstImpl
+import ru.akhitev.reporter.email.sender.ISmtpManager
+import ru.akhitev.reporter.email.sender.SmtpManagerFirstImpl;
 import org.apache.log4j.Logger
 
 /**
- * Главный класс
+ * The main class
  *
- * @author Хитёв Алексей Юрьевич (alexkhitev@gmail.com)
+ * @author Aleksei Khitev (alexkhitev@gmail.com)
  */
 class Reporter{
     /**
-     * Обработчик отправки письма
+     * Email Send Manager
      */
-    SmtpManager smtpManager
+    ISmtpManager smtpManager
     /**
-     * Создатель тела письма
+     * Report Body Manager
      */
-    ReportManager reportManager
+    IReportManager reportManager
     /**
-     * Карта свойств
+     * Property's map
      */
     def properties = [:]
     /**
-     * Конструктор с журналом
-     * @param logger Журнал log4j
+     * Logger
+     */
+    static Logger logger;
+    /**
+     * Constructor with logger
+     * @param logger Logger log4j
      */
     Reporter(Logger logger){
-        smtpManager = new SmtpManagerImplOne()
-        reportManager = new ReportManagerImplOne()
-        smtpManager.setLogger(logger)
-        reportManager.setLogger(logger)
+        smtpManager = new SmtpManagerFirstImpl()
+        reportManager = new ReportManagerFirstImpl()
+        this.logger = logger;
         parseProprtiesFile("dat${File.separator}reporter.properties")
     }
     /**
-     * Констурктор без журнала
+     * Constructor without logger
      */
     Reporter(){
-        smtpManager = new SmtpManagerImplOne()
-        reportManager = new ReportManagerImplOne()
+        smtpManager = new SmtpManagerFirstImpl()
+        reportManager = new ReportManagerFirstImpl()
         parseProprtiesFile("dat${File.separator}reporter.properties")
     }
     /**
-     * Конструктор с путем к файлу свойств
-     * @param propFilePath Файл с данными для карты свойств
+     * Constructor with property's file path
+     * @param propFilePath Property's file for property map
      */
     Reporter(String propFilePath){
-        smtpManager = new SmtpManagerImplOne()
-        reportManager = new ReportManagerImplOne()
+        smtpManager = new SmtpManagerFirstImpl()
+        reportManager = new ReportManagerFirstImpl()
         parseProprtiesFile(propFilePath)
     }
     /**
-     *  Конструктор с журналом и путем к файлу свойств
-     * @param propFilePath Файл с данными для карты свойств
-     * @param logger Журнал log4j
+     *  Constructor with property's file path and logger
+     * @param propFilePath Property's file for property map
+     * @param logger Logger log4j
      */
     Reporter(String propFilePath, Logger logger){
-        smtpManager = new SmtpManagerImplOne()
-        reportManager = new ReportManagerImplOne()
-        smtpManager.setLogger(logger)
-        reportManager.setLogger(logger)
+        smtpManager = new SmtpManagerFirstImpl()
+        reportManager = new ReportManagerFirstImpl()
+        this.logger = logger;
         parseProprtiesFile(propFilePath)
     }
     /**
-     * Метод заполнения карты свойств из файла
-     * @param propFilePath Файл с данными для карты свойств
+     * The method used for setting properties from property's file
+     * @param propFilePath Property's file for property map
      */
     void parseProprtiesFile(String propFilePath){
         Properties props = new Properties()
@@ -98,16 +106,16 @@ class Reporter{
         }
     }
     /**
-     * Заполнение карты свойств в ручную
-     * @param title Основной заголовок в шаблоне
-     * @param firstHeader Заголовок секции системных сообщений
-     * @param secondHeader Заголовок секции сообщений обработки
-     * @param host Адрес сервера smtp
-     * @param port Порт сервера smtp
-     * @param username Имя пользователя для подключения к серверу smtp
-     * @param password Пароль для подключения к серверу smtp
-     * @param to Адрес получателя (получателей через запятую)
-     * @param subject Тема письма
+     * The method used for setting properties by hand
+     * @param title Main title at the template
+     * @param firstHeader System section title
+     * @param secondHeader Another section title
+     * @param host SMTP server adress
+     * @param port SMTP server port
+     * @param username Username for SMTP connection
+     * @param password Password for SMTP connection
+     * @param to Adress (or adresses,  separated by kommas)
+     * @param subject Email's subject
      */
     void setProperties(String title, String firstHeader, String secondHeader,String host, int port, String username, String password, String to, String subject){
         properties['title']=title
@@ -121,10 +129,10 @@ class Reporter{
         properties['subject']=subject
     }
     /**
-     * Добавление сообщения в список сообщений
-     * @param firstCol Наполнение первой ячейки таблицы
-     * @param secondCol Наполнение второй ячейки таблицы
-     * @param type Тип (system или что либо другое)
+     * The method used for adding message to message list
+     * @param firstCol First column text
+     * @param secondCol Second column text
+     * @param type Type of message (system or another)
      */
     void addToMessage(String firstCol, String secondCol, String type){
         if(type.equals("system")){
@@ -134,7 +142,7 @@ class Reporter{
         }
     }
     /**
-     * Отправка отчета
+     * The method used for sending report
      */
     void sendReport(){
         smtpManager.setMailSender(properties['host'],properties['port'],properties['username'],properties['password'])
